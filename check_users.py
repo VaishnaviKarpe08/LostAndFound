@@ -1,4 +1,4 @@
-from app import app, db, User
+from LostAndFound.app import app, db, User
 
 with app.app_context():
     users = User.query.all()
