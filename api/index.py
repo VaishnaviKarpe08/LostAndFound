@@ -517,8 +517,9 @@ def init_db():
             print("Default admin user created")
 
 # ------------------ RUN ------------------
-if __name__ == '__main__':
-    init_db()
-    print("Server starting...")
-    print("Admin: admin@lostfound.com / Admin123!")
-    app.run(debug=True, port=5000)
+# Vercel Entry Point
+def handler(event, context):
+    return app(event, context)
+
+# For Vercel Python Runtime
+application = app
